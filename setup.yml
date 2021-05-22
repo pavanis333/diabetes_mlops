@@ -1,6 +1,6 @@
 - name: installing terraform and docker
   hosts: localhost
-  vaars_prompt:
+  vars_prompt:
           - name: credentials
             prompt: !!!  Please Enter the AWS Credentials  !!!
   tasks:
