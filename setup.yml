@@ -31,3 +31,6 @@
                     name: docker
                     state: started
                     enabled: yes
+                    
+          - name: run terraform code
+            shell: terraform apply --auto-approve
