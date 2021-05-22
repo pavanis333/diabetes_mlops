@@ -17,7 +17,7 @@ resource "aws_ecs_task_definition" "deeplearning_task_definition" {
     "portMappings": [
       {
         "containerPort": 80,
-        "hostPort": 8080
+        "hostPort": 80
       }
     ]
   }
