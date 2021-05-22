@@ -1,5 +1,8 @@
 - name: installing terraform and docker
   hosts: localhost
+  vaars_prompt:
+          - name: credentials
+            prompt: !!!  Please Enter the AWS Credentials  !!!
   tasks:
           - name: install yum-utils
             yum:
@@ -32,5 +35,15 @@
                     state: started
                     enabled: yes
                     
+          - name: creating credentials file
+            file:
+              name: .aws
+              path: /root/
+          
+          - name: saving aws credentials
+            copy:
+              content: "{{ credentials }}"
+              dest: /root/.aws/credentials
+            
           - name: run terraform code
             shell: terraform apply --auto-approve
