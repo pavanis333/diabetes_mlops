@@ -2,13 +2,13 @@
   hosts: localhost
   vars_prompt:
           - name: profile
-            prompt: "Enter profile : "
+            prompt: "Enter profile "
           - name: access_key
-            prompt: "Enter Access Key : "
+            prompt: "Enter Access Key "
           - name: secret_access_key
-            prompt: "Enter Secret Access Key : "
+            prompt: "Enter Secret Access Key "
           - name: token
-            prompt: "Enter Session Token : "
+            prompt: "Enter Session Token "
             default: " "
             
   tasks:
@@ -20,6 +20,7 @@
           - name: add terraform repository
             yum_repository:
               name: terraform
+              description: terraform
               baseurl: https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
               
           - name: install terraform
@@ -29,8 +30,9 @@
               
           - name: configuring docker repository
             yum_repository:
-                    name: docker
-                    baseurl: https://download.docker.com/linux/centos/7/x86_64/stable/
+              name: docker
+              description: docker
+              baseurl: https://download.docker.com/linux/centos/7/x86_64/stable/
 
           - name: installing docker
             yum:
@@ -39,9 +41,9 @@
               
           - name: starting and enabling docker services
             service:
-                    name: docker
-                    state: started
-                    enabled: yes
+              name: docker
+              state: started
+              enabled: yes
                     
           - name: creating credentials file
             file:
