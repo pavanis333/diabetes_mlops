@@ -1,0 +1,33 @@
+- name: installing terraform and docker
+  hosts: localhost
+  tasks:
+          - name: install yum-utils
+            yum:
+              name: yum-utils
+              state: present
+              
+          - name: add terraform repository
+            yum_repository:
+              name: terraform
+              baseurl: https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+              
+          - name: install terraform
+            yum:
+              name: terraform
+              state: present
+              
+          - name: configuring docker repository
+            yum_repository:
+                    name: docker
+                    baseurl: https://download.docker.com/linux/centos/7/x86_64/stable/
+
+          - name: installing docker
+            yum:
+              name: docker
+              state: present
+              
+          - name: starting and enabling docker services
+            service:
+                    name: docker
+                    state: started
+                    enabled: yes
