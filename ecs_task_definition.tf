@@ -1,6 +1,8 @@
 resource "aws_ecs_task_definition" "deeplearning_task_definition" {
   depends_on = [aws_ecs_cluster.deeplearning_cluster]
   family = "deeplearning_task_definition"
+  network_mode = "awsvpc"
+  execution_role_arn = aws_iam_role.ecs_task_execution_role.arn
   requires_compatibilities = ["FARGATE"]
   cpu = 1024
   memory = 2048
