@@ -5,8 +5,8 @@ resource "aws_ecs_task_definition" "deeplearning_task_definition" {
   container_definitions = <<TASK_DEFINITION
   [
   {
-    "cpu" : 128,
-    "memory" : 256,
+    "cpu" : 1024,
+    "memory" : 2048,
     "name": "${var.container_name}",
     "image": "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.aws_region}.amazonaws.com/${var.image_name}:latest",
     "essential": true,
