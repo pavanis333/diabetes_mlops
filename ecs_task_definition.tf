@@ -1,7 +1,7 @@
 resource "aws_ecs_task_definition" "deeplearning_task_definition" {
   depends_on = [aws_ecs_cluster.deeplearning_cluster]
   family = "deeplearning_task_definition"
-  requires_compatibilities = ["FARGATE", "FARGATE_SPOT"]
+  requires_compatibilities = ["FARGATE"]
   container_definitions = <<TASK_DEFINITION
   [
   {
