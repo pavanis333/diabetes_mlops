@@ -2,7 +2,7 @@
   hosts: localhost
   vars_prompt:
           - name: credentials
-            prompt: !!!  Please Enter the AWS Credentials  !!!
+            prompt: "!!!  Please Enter the AWS Credentials  !!!"
   tasks:
           - name: install yum-utils
             yum:
