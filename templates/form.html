@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Diabetes Prediction</title>
+<h1>Enter the values to know your diabetes status</h1>
+
+<!-- CSS -->
+<style>
+.myForm {
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.8em;
+width: 20em;
+padding: 1em;
+border: 1px solid #ccc;
+}
+
+.myForm * {
+box-sizing: border-box;
+}
+
+.myForm fieldset {
+border: none;
+padding: 0;
+}
+
+.myForm legend,
+.myForm label {
+padding: 0;
+font-weight: bold;
+}
+
+.myForm label.choice {
+font-size: 0.9em;
+font-weight: normal;
+}
+
+.myForm input[type="text"],
+.myForm select,
+.myForm textarea {
+display: block;
+width: 100%;
+border: 1px solid #ccc;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.9em;
+padding: 0.3em;
+}
+
+.myForm textarea {
+height: 100px;
+}
+
+.myForm button {
+padding: 1em;
+border-radius: 0.5em;
+background: #eee;
+border: none;
+font-weight: bold;
+margin-top: 1em;
+}
+
+.myForm button:hover {
+background: #ccc;
+cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<form class="myForm" action='/output'  method="GET">
+
+<p>
+<label>Number of times prregnant
+<input type="text" name="p1" required>
+</label> 
+</p>
+
+<p>
+<label>Plasma glucose concentration
+<input type="text" name="p2" required>
+</label>
+</p>
+
+<p>
+<label>Diastolic blood pressure (mm Hg)
+<input type="text" name="p3" required>
+</label>
+</p>
+	
+<p>
+<label>Triceps skin fold thickness (mm)
+<input type="text" name="p4" required>
+</label>
+</p>
+
+<p>
+<label>2-Hour Serum insulin (muU/ml)
+<input type="text" name="p5" required>
+</label>
+</p>
+
+<p>
+<label>Body mass index
+<input type="text" name="p6" required>
+</label>
+</p>
+
+<p>
+<label>Diabetes pedigree function
+<input type="text" name="p7" required>
+</label>
+</p>
+
+<p>
+<label>Age
+<input type="text" name="p8" required>
+</label>
+</p>
+
+<p><input type='submit' /></p>
+
+</form>
+
+</body>
+</html>
