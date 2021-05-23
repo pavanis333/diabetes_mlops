@@ -6,3 +6,6 @@ sudo yum -y install terraform
 
 sudo yum install docker -y
 sudo systemctl start docker
+
+mkdir /root/.aws/
+cat > /root/.aws/credentials
