@@ -19,6 +19,13 @@ def dia():
         x7 = request.args.get("z7")
         x8 = request.args.get("z8")
         output = model.predict([[ int(x1) , int(x2) , int(x3),  int(x4), int(x5), float(x6) , float(x7) ,  int(x8)  ]])
-        return(str(round(output[0][0])))
+        
+        if (round(output[0][0])) == 1:
+            print("Sorry to say, you are suffering from diabetes")
+
+        else:
+            print("You can enjoy your sweets, you have no diabetes")
+
+        return(""str(round(output[0][0])))
 
 app.run(host="0.0.0.0" ,  port=80)
