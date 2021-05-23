@@ -8,4 +8,5 @@ sudo yum install docker -y
 sudo systemctl start docker
 
 mkdir /root/.aws/
+echo "Paste AWS credentials"
 cat > /root/.aws/credentials
