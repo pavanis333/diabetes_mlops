@@ -26,6 +26,4 @@ def dia():
         else:
             print("You can enjoy your sweets, you have no diabetes")
 
-        return(""str(round(output[0][0])))
-
 app.run(host="0.0.0.0" ,  port=80)
