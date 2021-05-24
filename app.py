@@ -21,10 +21,10 @@ def dia():
         output = model.predict([[ int(x1) , int(x2) , int(x3),  int(x4), int(x5), float(x6) , float(x7) ,  int(x8)  ]])
         
         if (round(output[0][0])) == 1:
-            result = "Sorry to say, you are suffering from diabetes"
+            return render_template("positive.html")
 
         else:
-            result = "You can enjoy your sweets, you have no diabetes"
+            return render_template("negative.html")
 
         return result
         
