@@ -21,9 +21,9 @@ def dia():
         output = model.predict([[ int(x1) , int(x2) , int(x3),  int(x4), int(x5), float(x6) , float(x7) ,  int(x8)  ]])
         
         if (round(output[0][0])) == 1:
-            return "<img src="nosweets.png" height="1920" width="1080">"
+            return render_template("<img src="nosweets.png" height="1920" width="1080">")
 
         else:
-            return "<img src="sweets.png" height="1920" width="1080">"
+            return render_template("<img src="sweets.png" height="1920" width="1080">")
         
 app.run(host="0.0.0.0" ,  port=80)
