@@ -21,10 +21,10 @@ def dia():
         output = model.predict([[ int(x1) , int(x2) , int(x3),  int(x4), int(x5), float(x6) , float(x7) ,  int(x8)  ]])
         
         if (round(output[0][0])) == 1:
-            return render_template("positive.html")
+            return render_template("nosweets.png")
 
         else:
-            return render_template("negative.html")
+            return render_template("sweets.png")
 
         return result
         
