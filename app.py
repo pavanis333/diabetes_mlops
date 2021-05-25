@@ -1,5 +1,5 @@
 from keras.models  import load_model
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 
 app = Flask("dismodelapp")
 model  =  load_model("pima_indians_diabetes_model.h5")
@@ -21,7 +21,7 @@ def dia():
         output = model.predict([[ int(x1) , int(x2) , int(x3),  int(x4), int(x5), float(x6) , float(x7) ,  int(x8)  ]])
         
         if (round(output[0][0])) == 1:
-            return render_template("positive.html")
+            return 
 
         else:
             return render_template("negative.html")
