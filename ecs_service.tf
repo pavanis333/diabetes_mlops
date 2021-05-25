@@ -3,7 +3,7 @@ resource "aws_ecs_service" "deeplearning_service" {
         name            = var.service_name
   	cluster         = aws_ecs_cluster.deeplearning_cluster.id
   	task_definition = aws_ecs_task_definition.deeplearning_task_definition.arn
-  	desired_count   = 1
+  	desired_count   = 2
 	launch_type     = "FARGATE"
 
         network_configuration {
