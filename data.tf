@@ -19,3 +19,7 @@ data "aws_iam_policy_document" "ecs_task_execution_role" {
     }
   }
 }
+
+data "aws_ecr_authorization_token" "token" {}
+
+data "aws_caller_identity" "current" {}

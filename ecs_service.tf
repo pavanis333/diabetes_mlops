@@ -1,6 +1,6 @@
 resource "aws_ecs_service" "deeplearning_service" {
-        depends_on      = [aws_lb_listener.cluster_lb_listener, aws_iam_role_policy_attachment.ecs_task_execution_role]
-        name            = var.service_name
+    depends_on      = [aws_lb_listener.cluster_lb_listener, aws_iam_role_policy_attachment.ecs_task_execution_role]
+    name            = var.service_name
   	cluster         = aws_ecs_cluster.deeplearning_cluster.id
   	task_definition = aws_ecs_task_definition.deeplearning_task_definition.arn
   	desired_count   = 2
@@ -12,7 +12,7 @@ resource "aws_ecs_service" "deeplearning_service" {
         assign_public_ip = true
         }
 	
-  	load_balancer {
+  		load_balancer {
     	target_group_arn  = aws_lb_target_group.cluster_target_group.arn
     	container_port    = 80
     	container_name    = var.container_name
